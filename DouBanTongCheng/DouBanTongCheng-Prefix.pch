@@ -1,0 +1,36 @@
+//
+// Prefix header for all source files of the 'DouBanTongCheng' target in the 'DouBanTongCheng' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define kDeviceWidth [UIScreen mainScreen].bounds.size.width
+#define KDeviceHeight [UIScreen mainScreen].bounds.size.height
+
+
+#define PikerURLString(Location,day_Type,Type,nStart) [NSString stringWithFormat:@"https://api.douban.com/v2/event/list?loc=%@&day_type=%@&type=%@&start=%i&count=10",Location,day_Type,Type,nStart]
+
+#define UserJoinEventsURLString(UserID)[NSString stringWithFormat:@"https://api.douban.com/v2/event/user_participated/%@",UserID]
+
+#define UserWisherEventsURLString(UserID)[NSString stringWithFormat:@"https://api.douban.com/v2/event/user_wished/%@",UserID]
+
+
+typedef enum
+{
+    events_Hot,
+    events_Weekend,
+    events_Today,
+    events_Search,
+    events_Joins,
+    events_Partici,
+    
+}getEvents;
